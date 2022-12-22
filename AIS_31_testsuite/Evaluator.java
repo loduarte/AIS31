@@ -45,7 +45,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
     private JLabel vorgangsname = new JLabel("Fortschritt:");
     private JLabel configtestart = new JLabel("Testart:");
     private JLabel zahlenbreite = new JLabel("Interne Zufallszahlen:");
-    public JTextField dateieingabe = new JTextField("In dieses Feld Dateinamen im Stil \"C:\\Testdaten\\Datei.dat\" eingeben",40); 
+    public JTextField dateieingabe = new JTextField("In dieses Feld Dateinamen im Stil \"C:\\Testdaten\\Datei.dat\" eingeben",40);
     public JTextField bitbreiteeingabe = new JTextField("Breite in Bit",7);
     private JProgressBar fortschritt = new JProgressBar(0,300);
     private JButton dateisuchen = new JButton("Datei suchen");
@@ -55,9 +55,9 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
     private JButton vorgangabbruch = new JButton("Abbrechen");
     private JTextArea textbox = new JTextArea(5,50);
     boolean logfileenabled = true;
-    
-    
-    
+
+
+
     public Evaluator(){
         super("AIS 31 (V1) Referenzimplementierung der stat. Tests - v1.0 [Kein Job]");
         setBounds(100,100,700,550);
@@ -76,30 +76,30 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         JPanel configpanel3 = new JPanel();
         JPanel vorgangspanel6 = new JPanel();
         rb[0] = new JRadioButton("P1: T1 - T5", true);
-        rb[0].setToolTipText("TNRG-Klasse P1, Test T1 - T5 wählen");
+        rb[0].setToolTipText("TNRG-Klasse P1, Test T1 - T5 wï¿½hlen");
         rb[1] = new JRadioButton("P2 - spezifisch", false);
-        rb[1].setToolTipText("TNRG-Klasse P2 (spezifische Tests) wählen");
+        rb[1].setToolTipText("TNRG-Klasse P2 (spezifische Tests) wï¿½hlen");
         rb[2] = new JRadioButton("Normal", false);
-        rb[2].setToolTipText("Ausgabe ohne Details (Testdaten, Debug-Infos, etc ...) wählen");
+        rb[2].setToolTipText("Ausgabe ohne Details (Testdaten, Debug-Infos, etc ...) wï¿½hlen");
         rb[3] = new JRadioButton("Detailliert", true);
-        rb[3].setToolTipText("Ausgabe mit Details (Testdaten, Debug-Infos, etc ...) wählen");
+        rb[3].setToolTipText("Ausgabe mit Details (Testdaten, Debug-Infos, etc ...) wï¿½hlen");
         rb[4] = new JRadioButton("1Byte = 1RNDBit", true);
         rb[4].setToolTipText("In 1 Dateibyte befindet sich genau 1 Zufallsbit");
         rb[5] = new JRadioButton("1Byte = 8RNDBit", false);
-        rb[5].setToolTipText("In 1 Dateibyte befinden sich genau 8 Zufallsbits, älteres ist höchstwertiges");
+        rb[5].setToolTipText("In 1 Dateibyte befinden sich genau 8 Zufallsbits, ï¿½lteres ist hï¿½chstwertiges");
         rb[6] = new JRadioButton("Normaler Test", true);
         rb[6].setToolTipText("TNRG unterzieht sich normalem Test, keinem Wiederholungstest");
         rb[7] = new JRadioButton("Wiederholung", false);
         rb[7].setToolTipText("TNRG wird Wiederholungstest unterzogen, da 1. Test gescheitert");
         rb[8] = new JRadioButton("P1: T0", false);
-        rb[8].setToolTipText("TNRG-Klasse P1, Test T0 wählen");
+        rb[8].setToolTipText("TNRG-Klasse P1, Test T0 wï¿½hlen");
         fortschritt.setStringPainted(true);
         vorgangabbruch.setBackground(Color.red);
-        vorgangabbruch.setToolTipText("Während der zeitaufwändigen Testsuite (P0/T1-T5) kann hiermit der Test abgebrochen werden");
+        vorgangabbruch.setToolTipText("Wï¿½hrend der zeitaufwï¿½ndigen Testsuite (P0/T1-T5) kann hiermit der Test abgebrochen werden");
         start5.setToolTipText("Nach Dateneingabe hier klicken, um Test zu starten");
         dateisuchen.addActionListener(this);
         dateisuchen.setEnabled(false);
-        dateisuchen.setToolTipText("Den Windows-Dateisuchen-Dialog öffnen (NOCH NICHT VOLLSTÄNDIG IMPLEMENTIERT, bitte Dateinamen von Hand eingeben)");
+        dateisuchen.setToolTipText("Den Windows-Dateisuchen-Dialog ï¿½ffnen (NOCH NICHT VOLLSTï¿½NDIG IMPLEMENTIERT, bitte Dateinamen von Hand eingeben)");
         start5.setBackground(Color.green);
         start5.addActionListener(this);
         vorgangabbruch.addActionListener(this);
@@ -119,7 +119,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         hauptpanel.setLayout(gblhaupt);
         buildConstraints(gbc,0,0,1,1,1000,100);
         gbl2.setConstraints(dateieingabe,gbc);
-        dateieingabe.setToolTipText("Hier den Dateinamen eingeben im Stil \"<Laufwerk>:\\<Pfad>\\<dateiname>.<endung>\" (Ohne Anführungszeichen)");
+        dateieingabe.setToolTipText("Hier den Dateinamen eingeben im Stil \"<Laufwerk>:\\<Pfad>\\<dateiname>.<endung>\" (Ohne Anfï¿½hrungszeichen)");
         dateipanel2.add(dateieingabe);
         buildConstraints(gbc,1,0,2,1,10,100);
         gbl2.setConstraints(dateisuchen,gbc);
@@ -146,12 +146,12 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         gbl6.setConstraints(fortschritt, gbc);
         vorgangspanel6.add(fortschritt);
         buildConstraints(gbc,3,0,1,1,10,100);
-        fortschritt.setToolTipText("Während des Testens wird hier Graphisch angezeigt, wieviel % schon getestet sind");
-        textbox.setToolTipText("Hier werden sämtliche Meldungen des Programms chronologisch geordnet mit Zeit hineingeschrieben.");
+        fortschritt.setToolTipText("Wï¿½hrend des Testens wird hier Graphisch angezeigt, wieviel % schon getestet sind");
+        textbox.setToolTipText("Hier werden sï¿½mtliche Meldungen des Programms chronologisch geordnet mit Zeit hineingeschrieben.");
         gbl6.setConstraints(vorgangabbruch, gbc);
         vorgangspanel6.add(vorgangabbruch);
         textpanel7 = new JScrollPane(textbox);
-        textbox.append(progname + "\nProgrammstart am " + systemdatum() + " um " + systemzeit() + " Uhr\n\nBEI PROBLEMEN IN DREI STUFEN VORGEHEN:\n     1) Maustaste über das fragliche Objekt halten, Hilfe erscheint\n     2) Wenn Problem nicht geklärt, Hilfe-Button drücken\n     3) Notfalls: Technische Anfragen an zertifizierung@bsi.bund.de");
+        textbox.append(progname + "\nProgrammstart am " + systemdatum() + " um " + systemzeit() + " Uhr\n\nBEI PROBLEMEN IN DREI STUFEN VORGEHEN:\n     1) Maustaste ï¿½ber das fragliche Objekt halten, Hilfe erscheint\n     2) Wenn Problem nicht geklï¿½rt, Hilfe-Button drï¿½cken\n     3) Notfalls: Technische Anfragen an zertifizierung@bsi.bund.de");
         ButtonGroup rbgrpsicherheit = new ButtonGroup();
         ButtonGroup rbgrpausgabe = new ButtonGroup();
         ButtonGroup rbgrpformat = new ButtonGroup();
@@ -190,19 +190,19 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         elementeAnpassen(0);
         fortschritt.setValue(fortschrittzahl);
         textbox.setEditable(false);
-        show();
+        setVisible(true);
     }
-    
-    
-    
+
+
+
     public void setzefortschritt(int schritt){
         fortschritt.setValue(schritt);
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     public void actionPerformed(ActionEvent evt) {
         Object src = evt.getSource();
         if (src instanceof JButton) {
@@ -223,14 +223,14 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
                 abbruch = true;
             }
             if (src == hilfe){
-                kommentar("Hilfe wird eingeblendet - Log wird anschliessend fortgeführt.", true,0);
+                kommentar("Hilfe wird eingeblendet - Log wird anschliessend fortgefï¿½hrt.", true,0);
                 textbox.append("\n\n\nHILFE von " + progname +
-                "\n\nDieses Programm führt die in der mathematisch-technischen Anlage \nzur AIS 31 spezifizierten statistischen Tests durch. \nDie Hilfetexte sollen die Handhabung des Programms erleichtern. \nFür das Verständnis der Zusammenhänge wird auf die mathematisch-technischen \nAnlage zur AIS 31 verwiesen.\n" +
+                "\n\nDieses Programm fï¿½hrt die in der mathematisch-technischen Anlage \nzur AIS 31 spezifizierten statistischen Tests durch. \nDie Hilfetexte sollen die Handhabung des Programms erleichtern. \nFï¿½r das Verstï¿½ndnis der Zusammenhï¿½nge wird auf die mathematisch-technischen \nAnlage zur AIS 31 verwiesen.\n" +
                 "\nAnleitung:\n" +
-                "   1) Geben Sie die Zufallszahlendatei mit vollständigem Pfad ein.\n" +
-                "   2) Wählen Sie jeweils einen Eintrag aus den Spalten \"Tests\", \"Ausgabe\", \"Datenformat\" und \"Testart\".\n" +
+                "   1) Geben Sie die Zufallszahlendatei mit vollstï¿½ndigem Pfad ein.\n" +
+                "   2) Wï¿½hlen Sie jeweils einen Eintrag aus den Spalten \"Tests\", \"Ausgabe\", \"Datenformat\" und \"Testart\".\n" +
                 "   3) Geben Sie die Breite der internen Zufallszahlen in Bit an.\n" +
-                "   4) Drücken Sie den Start-Button. Abhängig von Ihrem Rechner kann das Programm mehrere Minuten benötigen.  Der Laufzeitbalken zeigt den Fortschritt an.\n" +
+                "   4) Drï¿½cken Sie den Start-Button. Abhï¿½ngig von Ihrem Rechner kann das Programm mehrere Minuten benï¿½tigen.  Der Laufzeitbalken zeigt den Fortschritt an.\n" +
                 "\nTest-Suiten:\n" +
                 "   P1: T0: Vgl. AIS 31, P1.i.(i) und F. Statistische Tests, Test T0\n" +
                 "   P1: T1-T5: Vgl. AIS 31, P1.i.(ii-ii.c) und F. Statistische Tests, Tests T1-T5\n" +
@@ -238,32 +238,32 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
                 "\nEingabe- / Dateiformat:\n" +
                 "   1Byte=1RNDBit: Jedes Byte der Eingabedatei entspricht einem Zufallsbit.\n" +
                 "   1Byte=8RNDBit: Jedes Byte der Eingabedatei entspricht 8 Zufallsbits,\n" +
-                "   wobei das höchstwertige Bit als ältestes interpretiert wird.\n\n" +
+                "   wobei das hï¿½chstwertige Bit als ï¿½ltestes interpretiert wird.\n\n" +
                 "Testart:\n" +
-                "   Normal = Erste Durchführung des entsprechenden Tests.\n" +
-                "   Wiederholung: Zweite Durchführung des entsprechenden Tests.\n\n" +
+                "   Normal = Erste Durchfï¿½hrung des entsprechenden Tests.\n" +
+                "   Wiederholung: Zweite Durchfï¿½hrung des entsprechenden Tests.\n\n" +
                 "Interne Zufallszahlen:\n" +
                 "   Breite der vom Zufallszahlengenerator erzeugten internen\n" +
                 "   Zufallszahlen in Bit (vgl. AIS 31, B.1 Definitionen)\n\n" +
                 "Tasten:\n" +
-                "   Starttaste (Grün): Starten Sie die Tests, nachdem Sie alle Einstellungen gewählt haben.\n" +
-                "   Hilfe-Taste (Gelb): Schreibt den vollständigen Hilfetext ins Textfenster.\n" +
-                "\nDiejenigen Zufallszahlen der Eingabedatei, die zur Durchführung einer Testsuite \n(T0, T1-T5 oder P2-spezifische Tests) nicht benötigt werden,werden in eine neue \nDatei geschrieben. Der Dateiname ergibt sich aus der Eingabedatei durch Anhängen von \n\"_rest\". Nach Beendigung der Testsuite wird diese Datei defaultmäßig in die \nEingabezeile eingetragen.\n\n\n"
+                "   Starttaste (Grï¿½n): Starten Sie die Tests, nachdem Sie alle Einstellungen gewï¿½hlt haben.\n" +
+                "   Hilfe-Taste (Gelb): Schreibt den vollstï¿½ndigen Hilfetext ins Textfenster.\n" +
+                "\nDiejenigen Zufallszahlen der Eingabedatei, die zur Durchfï¿½hrung einer Testsuite \n(T0, T1-T5 oder P2-spezifische Tests) nicht benï¿½tigt werden,werden in eine neue \nDatei geschrieben. Der Dateiname ergibt sich aus der Eingabedatei durch Anhï¿½ngen von \n\"_rest\". Nach Beendigung der Testsuite wird diese Datei defaultmï¿½ï¿½ig in die \nEingabezeile eingetragen.\n\n\n"
                 );
-                
-                kommentar("Hilfe beendet - Log wird fortgeführt.", true,0);
+
+                kommentar("Hilfe beendet - Log wird fortgefï¿½hrt.", true,0);
             }
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     static String systemzeit(){
         String zahlenformat = new String("00");
         DecimalFormat df = new DecimalFormat(zahlenformat);
@@ -271,9 +271,9 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         String zeit = new String(df.format(cal.get(Calendar.HOUR_OF_DAY)) + ":" + df.format(cal.get(Calendar.MINUTE)) + ":" + df.format(cal.get(Calendar.SECOND)));
         return zeit;
     }
-    
-    
-    
+
+
+
     static String systemdatum(){
         GregorianCalendar cal = new GregorianCalendar();
         String zahlenformat = new String("00");
@@ -281,9 +281,9 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         String datum = new String(df.format(cal.get(Calendar.DAY_OF_MONTH)) + "." + df.format((cal.get(Calendar.MONTH)+1)) + "." + df.format(cal.get(Calendar.YEAR)));
         return datum;
     }
-    
-    
-    
+
+
+
     public void itemStateChanged(ItemEvent evt) {
         GregorianCalendar cal = new GregorianCalendar();
         Object src = evt.getSource();
@@ -330,9 +330,9 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
                 break;
         }
     }
-    
-    
-    
+
+
+
     public void elementeAnpassen(int status) {
         switch (status){
             case 0:
@@ -377,7 +377,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
                 hilfe.setEnabled(false);
                 break;
             case 2:
-                setTitle(progname + " - [Prüfung läuft]");
+                setTitle(progname + " - [Prï¿½fung lï¿½uft]");
                 for (int i = 0; i<rb.length; i++){
                     rb[i].setEnabled(false);
                 }
@@ -399,9 +399,9 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
                 break;
         }
     }
-    
-    
-    
+
+
+
     public void kommentar(String text, boolean wichtig, int ebene) {
         if ((wichtig) | (geschwaetzig)){
             textbox.append("\n[" + systemzeit() + "] ");
@@ -423,9 +423,9 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
             }
         }
     }
-    
-    
-    
+
+
+
     void buildConstraints(GridBagConstraints gbc, int gx, int gy, int gw, int gh, int wx, int wy) {
         gbc.gridx = gx;
         gbc.gridy = gy;
@@ -435,9 +435,9 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         gbc.weighty = wy;
         gbc.fill = GridBagConstraints.BOTH;
     }
-    
-    
-    
+
+
+
     static void look(){
         try {
             UIManager.setLookAndFeel(
@@ -445,9 +445,9 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         } catch (Exception e1) {
         }
     }
-    
-    
-    
+
+
+
     public static void main(String[] arguments) {
         try {
             UIManager.setLookAndFeel(
@@ -456,14 +456,14 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         }
         Evaluator evaluator = new Evaluator();
     }
-    
-    
-    
-    
+
+
+
+
 }
 
 class Tester extends Thread{
-    
+
     Evaluator evaluator;
     final int elementzahl = 256*65536;
     public byte[] BitFeldA = new byte[256*65536];
@@ -485,8 +485,8 @@ class Tester extends Thread{
     FileInputStream datei;
     DataInputStream bitdatei;
     String progname;
-    
-    
+
+
     Tester(Evaluator eva){
         setPriority(NORM_PRIORITY);
         evaluator = eva;
@@ -501,11 +501,11 @@ class Tester extends Thread{
         dateigewaehlt = evaluator.dateigewaehlt;
         letzteselement = evaluator.letzteselement;
         progname = evaluator.progname;
-        
+
     }
-    
+
     public boolean einlesen(byte[] BitFeldA) {
-        
+
         String dateiname = evaluator.dateieingabe.getText();
         boolean eof = false;
         int anzahl = 0;
@@ -532,7 +532,7 @@ class Tester extends Thread{
                     } catch (EOFException e2){
                         eof = true;
                         evaluator.kommentar("Dateifehler: " + e2.toString(), true,2);
-                        
+
                     }
                     anzahl++;
                 }
@@ -581,7 +581,7 @@ class Tester extends Thread{
             }
         } catch (IOException e) {
             if (!dateigewaehlt){
-                evaluator.kommentar("Dateifehler: Keine Datei ausgewählt!",true,2);
+                evaluator.kommentar("Dateifehler: Keine Datei ausgewï¿½hlt!",true,2);
                 return false;
             }
             else{
@@ -630,27 +630,27 @@ class Tester extends Thread{
             evaluator.kommentar("Dateifehler: " + e.toString(), true,2);
         }
         if (anzahl < bitzahl) {
-            evaluator.kommentar("Dateifehler: Datei zu klein. Mindestgröße " + bitzahl + " Bits. Größe: " + anzahl + " Bits.", true,2);
+            evaluator.kommentar("Dateifehler: Datei zu klein. Mindestgrï¿½ï¿½e " + bitzahl + " Bits. Grï¿½ï¿½e: " + anzahl + " Bits.", true,2);
             return false;
         }
         evaluator.kommentar(anzahl + " Elemente in RAM kopiert.",false,2);
         if (byteformat){
-            evaluator.kommentar("Überprüfe Daten ...",false,2);
+            evaluator.kommentar("ï¿½berprï¿½fe Daten ...",false,2);
             for (int i = 0; i<bitzahl; i++){
                 if ((BitFeldA[i] != 1) & (BitFeldA[i] != 0)){
-                    evaluator.kommentar("Element Nr. " + (i) + " ungleich \"0\" oder \"1\", da \"" + BitFeldA[i] + "\" - Datenprüfung nicht bestanden.",true,2);
+                    evaluator.kommentar("Element Nr. " + (i) + " ungleich \"0\" oder \"1\", da \"" + BitFeldA[i] + "\" - Datenprï¿½fung nicht bestanden.",true,2);
                     return false;
                 }
             }
         }
         return true;
     }
-    
-    
-    
+
+
+
     void neuesfeldb(byte[] BitFeldA, byte[] BitFeldB, int durchlauf){
         int grundelement = 0;
-        
+
         if (durchlauf % (bitbreite+1) == 0){
             evaluator.kommentar("Teste im Block.",false,1);
             for (int i = 0; i < 20000; i++){
@@ -666,10 +666,10 @@ class Tester extends Thread{
             if (durchlauf % (bitbreite+1) == bitbreite) {
                 letzteselement += 20000*bitbreite;
             }
-            
+
         }
     }
-    
+
     int teilenaufrunden(int a, int b){
         if ((a % b) == 0){
             return (int)(a/b);
@@ -678,19 +678,19 @@ class Tester extends Thread{
             return (((int)(a/b)) + 1);
         }
     }
-    
-    
+
+
     public void run(){
         if (test()) {
             if (evaluator.testart == 0 | evaluator.testart == 1){
-                evaluator.kommentar("Durchlauf erfolgreich beendet, Restdatei zum Test ausgewählt.",true,0);
+                evaluator.kommentar("Durchlauf erfolgreich beendet, Restdatei zum Test ausgewï¿½hlt.",true,0);
             }
             else {
                 evaluator.kommentar("Durchlauf erfolgreich beendet.",true,0);
             }
         }
         else {
-            evaluator.kommentar("Test wurden nicht (vollständig) durchgeführt ODER NICHT BESTANDEN.\nNeben einem Benutzerabbruch kann dies folgende Ursachen haben:\n1) Ein Test wurde nicht bestanden (richtiges Dateiformat gewählt?)\n2) Bedienungsfehler (zB Interne Zufallszahlenbreite nicht eingegeben)\n3) Dateifehler (Datei zu klein, nicht vorhanden, etc)\nBitte durchsuchen Sie das LOG um den Fehler zu finden!",true,0);
+            evaluator.kommentar("Test wurden nicht (vollstï¿½ndig) durchgefï¿½hrt ODER NICHT BESTANDEN.\nNeben einem Benutzerabbruch kann dies folgende Ursachen haben:\n1) Ein Test wurde nicht bestanden (richtiges Dateiformat gewï¿½hlt?)\n2) Bedienungsfehler (zB Interne Zufallszahlenbreite nicht eingegeben)\n3) Dateifehler (Datei zu klein, nicht vorhanden, etc)\nBitte durchsuchen Sie das LOG um den Fehler zu finden!",true,0);
         }
         try{
             evaluator.logbuffer.flush();
@@ -698,7 +698,7 @@ class Tester extends Thread{
             evaluator.kommentar("Flush auf AIS 31.log fehlgeschlagen: " + e.toString(),true,0);
         }
     }
-    
+
     boolean test(){
         evaluator.setzefortschritt(0);
         boolean fehler = false;
@@ -729,9 +729,9 @@ class Tester extends Thread{
             evaluator.kommentar("AUSGABEDETAILS:\tAusgeschaltet.",true,0);
         }
         if (byteformat){
-            evaluator.kommentar("DATENFORMAT:\t1 Dateibyte enthält 1 Random-Bit.",true,0);
+            evaluator.kommentar("DATENFORMAT:\t1 Dateibyte enthï¿½lt 1 Random-Bit.",true,0);
         }else{
-            evaluator.kommentar("DATENFORMAT:\t1 Dateibyte enthält 8 Random-Bits.",true,0);
+            evaluator.kommentar("DATENFORMAT:\t1 Dateibyte enthï¿½lt 8 Random-Bits.",true,0);
         }
         if (normalertest){
             evaluator.kommentar("TESTART:\tNormaler Test.",true,0);
@@ -830,7 +830,7 @@ class Tester extends Thread{
                     evaluator.kommentar("Durchlauf " + (durchlauf+1) + " bestanden.", false, 1);
                 }
                 evaluator.setzefortschritt(durchlauf + 42);
-            } 
+            }
             evaluator.setzefortschritt(300);
             evaluator.dateieingabe.setText(evaluator.dateieingabe.getText() + "_rest");
         }
@@ -919,9 +919,9 @@ class Tester extends Thread{
         }
         return ok;
     }
-    
-    
-    
+
+
+
     boolean test1(){
         int i, einsen, mg=20000, ptest=0;
         boolean ok;
@@ -932,18 +932,18 @@ class Tester extends Thread{
         if ((einsen>9654) && (einsen<10346)) ok=true;
         else ok=false;
         evaluator.kommentar("Anzahl Einsen: " + einsen, false,3);
-        evaluator.kommentar("Zulässiger Bereich: [9655; 10345]", false,2);
+        evaluator.kommentar("Zulï¿½ssiger Bereich: [9655; 10345]", false,2);
         return ok;
     }
-    
-    
-    
+
+
+
     boolean test2(){
         int i,j,index,ptest;
         int[] Hfg = new int[16];
         boolean ok;
         double testgroesse;
-        
+
         for(i=0; i<16; i++) Hfg[i]=0;
         for(i=0; i<5000; i++) {
             index=0;
@@ -960,9 +960,9 @@ class Tester extends Thread{
         }
         return ok;
     }
-    
-    
-    
+
+
+
     boolean test3(){
         int i,j,run,ptest=0;
         int[] Run0Feld = new int[7];
@@ -989,31 +989,31 @@ class Tester extends Thread{
         ok=true;
         for(i=1; i<=6; i++){
             if ( (Run0Feld[i]>=UGrenze[i]) && (Run0Feld[i]<=OGrenze[i]) ){
-                evaluator.kommentar("0-Runs[" + i + "] = " + Run0Feld[i] + "; zulässiges Intervall: [" + UGrenze[i] + "; " + OGrenze[i] + "]",false,3);
+                evaluator.kommentar("0-Runs[" + i + "] = " + Run0Feld[i] + "; zulï¿½ssiges Intervall: [" + UGrenze[i] + "; " + OGrenze[i] + "]",false,3);
             }
             else {
                 ok=false;
-                evaluator.kommentar("FEHLER: 0-Runs[" + i + "] = " + Run0Feld[i] + "; zulässiges Intervall: [" + UGrenze[i] + "; " + OGrenze[i] + "]",true,3);
+                evaluator.kommentar("FEHLER: 0-Runs[" + i + "] = " + Run0Feld[i] + "; zulï¿½ssiges Intervall: [" + UGrenze[i] + "; " + OGrenze[i] + "]",true,3);
             }
             if ( (Run1Feld[i]>=UGrenze[i]) && (Run1Feld[i]<=OGrenze[i]) ){
-                evaluator.kommentar("1-Runs[" + i + "] = " + Run1Feld[i] + "; zulässiges Intervall: [" + UGrenze[i] + "; " + OGrenze[i] + "]",false,3);
+                evaluator.kommentar("1-Runs[" + i + "] = " + Run1Feld[i] + "; zulï¿½ssiges Intervall: [" + UGrenze[i] + "; " + OGrenze[i] + "]",false,3);
             }
             else {
                 ok=false;
-                evaluator.kommentar("FEHLER: 1-Runs[" + i + "] = " + Run1Feld[i] + "; zulässiges Intervall: [" + UGrenze[i] + "; " + OGrenze[i] + "]",true,3);
+                evaluator.kommentar("FEHLER: 1-Runs[" + i + "] = " + Run1Feld[i] + "; zulï¿½ssiges Intervall: [" + UGrenze[i] + "; " + OGrenze[i] + "]",true,3);
             }
         }
         return ok;
     }
-    
-    
-    
+
+
+
     boolean test4(){
         int i,run,ptest=0;
         boolean ok;
-        
+
         run=1;ok=true;
-        
+
         for(i=1; i<20000; i++) {
             if (BitFeldB[i-1]==BitFeldB[i]) {
                 run++;
@@ -1026,29 +1026,29 @@ class Tester extends Thread{
         }
         return ok;
     }
-    
-    
-    
+
+
+
     boolean test5(){
         int i,j,k,tau,Z_tau,max,maxindex,ptest=0;
         boolean ok;
         int[] ShiftFeld = new int[5000];
         int[] MaxKorrFeld = new int[5000];
-        
+
         for(tau=1; tau<=5000; tau++) {
             Z_tau=0;
             for(i=0; i<5000; i++) Z_tau+=(BitFeldB[i]^BitFeldB[i+tau]);
             ShiftFeld[tau-1]=Z_tau;
         }
-        
+
         max=0;
-        
+
         for(tau=0; tau<5000; tau++) {
             if (Math.abs(ShiftFeld[tau]-2500)>max){
                 max=Math.abs(ShiftFeld[tau]-2500);
             }
         }
-        
+
         j=0;
         for(tau=0; tau<5000; tau++) {
             if (Math.abs(ShiftFeld[tau]-2500)==max){
@@ -1056,9 +1056,9 @@ class Tester extends Thread{
                 j++;
             }
         }
-        
+
         evaluator.kommentar("Maximale Z_tau-Abweichung von 2500: " + max,false,3);
-        evaluator.kommentar("Aufgetreten für Shifts: ",false,3);
+        evaluator.kommentar("Aufgetreten fï¿½r Shifts: ",false,3);
         for(k=0; k<j; k++){
             evaluator.kommentar("Shift: " + (MaxKorrFeld[k]+1),false,4);
         }
@@ -1076,8 +1076,8 @@ class Tester extends Thread{
             ok=false;
         return ok;
     }
-    
-    
+
+
     boolean test6a(){
         boolean ok;
         double[] prob = new double[1];
@@ -1087,15 +1087,15 @@ class Tester extends Thread{
         for(int i=0; i<groesse ; i++) einsen+=BitFeldA[i];
         prob[0]=(double) einsen / (double) groesse;
         absdiff=Math.abs(prob[0]-0.5);
-        if ((absdiff<0.025)) ok = true;  
+        if ((absdiff<0.025)) ok = true;
         else ok = false;
         letzterwert = groesse;
         evaluator.kommentar("|P(1) - 0.5| = " + absdiff,false,2);
         evaluator.kommentar("Letztes Element: " + letzterwert,false,2);
         return ok;
     }
-    
-    
+
+
     boolean test6b(){
         int groesse=100000;
         int[] counter = {0,0};
@@ -1112,7 +1112,7 @@ class Tester extends Thread{
                 einsen[BitFeldA[letzterwert+2*i]]+=BitFeldA[letzterwert+2*i+1];
             }
             i++;
-        }  
+        }
         letzterwert += 2*i;
         if (voll[0]+voll[1]<2){
             evaluator.kommentar("Inputdatei zu klein....Kriterium P2.i)(vii.b) konnte nicht geprueft werden.",true,2);
@@ -1120,18 +1120,18 @@ class Tester extends Thread{
             return false;
         }
         else {
-            
+
             for(i=0; i<2; i++) prob[i]=(double)einsen[i]/groesse;
             absdiff=Math.abs(prob[0]-prob[1]);
             evaluator.kommentar("p(01) = " + prob[0],false,2);
             evaluator.kommentar("p(11) = " + prob[1],false,2);
             evaluator.kommentar("|p_(01) - p_(11)| = " + absdiff,false,2);
             evaluator.kommentar("Letztes Element: " + letzterwert,false,2);
-            if (absdiff<0.02) return true;  
+            if (absdiff<0.02) return true;
             else return false;
-        } 
+        }
     }
-    
+
     boolean test7a(){
         int groesse=100000;
         int hilf;
@@ -1150,7 +1150,7 @@ class Tester extends Thread{
                 einsen[hilf]+=BitFeldA[letzterwert+3*i+2];
             }
             i++;
-        }  
+        }
         letzterwert += 3*i;
         if (voll[0]+voll[1]+voll[2]+voll[3]<4){
             evaluator.kommentar("Inputdatei zu klein....Kriterium P2.i)(vii.c) konnte nicht geprueft werden",true,2);
@@ -1164,14 +1164,14 @@ class Tester extends Thread{
                 sum=((double)((nullen[2*i]-nullen[2*i+1])*(nullen[2*i]-nullen[2*i+1]))/(nullen[2*i]+nullen[2*i+1])
                 + (double)((einsen[2*i]-einsen[2*i+1])*(einsen[2*i]-einsen[2*i+1]))/(einsen[2*i]+einsen[2*i+1]));
                 if(sum>15.13) ok = false;
-                evaluator.kommentar("Testgröße[" + i + "] = " + sum,false,2);
+                evaluator.kommentar("Testgrï¿½ï¿½e[" + i + "] = " + sum,false,2);
             }
             evaluator.kommentar("Letztes Element: " + letzterwert,false,2);
             return ok;
         }
     }
 
-    
+
     boolean test7b(){
         boolean ok;
         int hilf;
@@ -1191,7 +1191,7 @@ class Tester extends Thread{
                 einsen[hilf]+=BitFeldA[letzterwert+4*i+3];
             }
             i++;
-        }  
+        }
         letzterwert += 4*i;
         if (voll[0]+voll[1]+voll[2]+voll[3]+voll[4]+voll[5]+voll[6]+voll[7]<8){
             evaluator.kommentar("Inputdatei zu klein....Kriterium P2.i)(vii.d) konnte nicht geprueft werden",true,2);
@@ -1205,31 +1205,31 @@ class Tester extends Thread{
                 sum=(double)((nullen[2*i]-nullen[2*i+1])*(nullen[2*i]-nullen[2*i+1]))/(nullen[2*i]+nullen[2*i+1])
                 + (double)((einsen[2*i]-einsen[2*i+1])*(einsen[2*i]-einsen[2*i+1]))/(einsen[2*i]+einsen[2*i+1]);
                 if(sum>15.13) ok=false;
-                evaluator.kommentar("Testgröße[" + i + "] = " + sum,false,2);
+                evaluator.kommentar("Testgrï¿½ï¿½e[" + i + "] = " + sum,false,2);
             }
         }
         evaluator.kommentar("Letztes Element: " + letzterwert,false,2);
         return ok;
     }
-    
-    
-    
+
+
+
     boolean test8(){
-        
+
         final int L = 8;
-        final int Q = 2560; 
-        final int K = 256000; 
+        final int Q = 2560;
+        final int K = 256000;
         int hilf = 0;
         int counter = 0;
         int[] letzteposition = new int[256];
         for (int i = 0; i<256; i++){
             letzteposition[i] = -1;
         }
-        int[] W = new int[Q+K];  
+        int[] W = new int[Q+K];
         double TG;
         double[] G = new double[K+Q+1];
         int abstand;
-        
+
         G[1]=0.0;
         for(int i=1; i<=K+Q-1; i++) G[i+1]=G[i]+1.0/(i);
         for(int i=1; i<=K+Q; i++) G[i]/=Math.log(2.0);
@@ -1241,7 +1241,7 @@ class Tester extends Thread{
             letzteposition[hilf] = i;
         }
         TG=0.0;
-        for(int i=Q; i<K+Q; i++){  
+        for(int i=Q; i<K+Q; i++){
             hilf = 0;
             for (int j = 0; j<8; j++){
                 hilf+= BitFeldA[letzterwert+8*i+j]<<j;
@@ -1249,14 +1249,12 @@ class Tester extends Thread{
             abstand = i - letzteposition[hilf];
             letzteposition[hilf] = i;
             TG+=G[abstand];
-        } 
+        }
         TG/=(double)K;
-        evaluator.kommentar("Testgröße = " + TG,false,2);
+        evaluator.kommentar("Testgrï¿½ï¿½e = " + TG,false,2);
         letzterwert += 8*(2560+256000);
         evaluator.kommentar("Letztes Element: " + letzterwert,false,2);
-        if (TG>7.976) return true;  
+        if (TG>7.976) return true;
         else return false;
     }
 }
-
-
