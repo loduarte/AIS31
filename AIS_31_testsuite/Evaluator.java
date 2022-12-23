@@ -30,36 +30,36 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
     int letzteselement = -1;
     FileInputStream datei;
     DataInputStream bitdatei;
-    String progname = new String("AIS 31 (V1) Referenzimplementierung - v1.0 ");
+    String progname = new String("AIS 31 (V1) Referencia de implementacao - v1.0 ");
     String dateiname = new String("");
     File logfile;
     FileWriter logwriter;
     BufferedWriter logbuffer;
     PrintWriter log;
     private JRadioButton[] rb = new JRadioButton[9];
-    private JLabel configlabel1 = new JLabel("Voreinstellungen:");
+    private JLabel configlabel1 = new JLabel("Predefinido:");
     private JLabel vorgangslabel4 = new JLabel("");
     private JLabel configtest = new JLabel("TRNG-Klasse:");
-    private JLabel configausgabe = new JLabel("Ausgabe:");
-    private JLabel configformat = new JLabel("Datenformat:");
-    private JLabel vorgangsname = new JLabel("Fortschritt:");
-    private JLabel configtestart = new JLabel("Testart:");
-    private JLabel zahlenbreite = new JLabel("Interne Zufallszahlen:");
-    public JTextField dateieingabe = new JTextField("In dieses Feld Dateinamen im Stil \"C:\\Testdaten\\Datei.dat\" eingeben",40);
-    public JTextField bitbreiteeingabe = new JTextField("Breite in Bit",7);
+    private JLabel configausgabe = new JLabel("Saida:");
+    private JLabel configformat = new JLabel("Formato de dados:");
+    private JLabel vorgangsname = new JLabel("Progresso:");
+    private JLabel configtestart = new JLabel("Teste:");
+    private JLabel zahlenbreite = new JLabel("Numeros aleatorios internos:");
+    public JTextField dateieingabe = new JTextField("Neste campo de nomes de arquivos em estilo \"/Users/lod/testData\"",40);
+    public JTextField bitbreiteeingabe = new JTextField("Largura em bit",7);
     private JProgressBar fortschritt = new JProgressBar(0,300);
-    private JButton dateisuchen = new JButton("Datei suchen");
-    private JButton hilfe = new JButton("Hilfe anzeigen");
-    private JButton start5 = new JButton("S  T  A  R  T");
+    private JButton dateisuchen = new JButton("arquivo de pesquisa");
+    private JButton hilfe = new JButton("Mostrar ajuda");
+    private JButton start5 = new JButton("I N I C I A R");
     private JScrollPane textpanel7;
-    private JButton vorgangabbruch = new JButton("Abbrechen");
+    private JButton vorgangabbruch = new JButton("Abortar");
     private JTextArea textbox = new JTextArea(5,50);
     boolean logfileenabled = true;
 
 
 
     public Evaluator(){
-        super("AIS 31 (V1) Referenzimplementierung der stat. Tests - v1.0 [Kein Job]");
+        super("AIS 31 (V1) Implementacao de referencia do STAT. Teste - v1.0 [Kein Job]");
         setBounds(100,100,700,550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         try{
@@ -77,19 +77,19 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         JPanel vorgangspanel6 = new JPanel();
         rb[0] = new JRadioButton("P1: T1 - T5", true);
         rb[0].setToolTipText("TNRG-Klasse P1, Test T1 - T5 w�hlen");
-        rb[1] = new JRadioButton("P2 - spezifisch", false);
+        rb[1] = new JRadioButton("P2 - especifico", false);
         rb[1].setToolTipText("TNRG-Klasse P2 (spezifische Tests) w�hlen");
         rb[2] = new JRadioButton("Normal", false);
         rb[2].setToolTipText("Ausgabe ohne Details (Testdaten, Debug-Infos, etc ...) w�hlen");
-        rb[3] = new JRadioButton("Detailliert", true);
+        rb[3] = new JRadioButton("Detalhado", true);
         rb[3].setToolTipText("Ausgabe mit Details (Testdaten, Debug-Infos, etc ...) w�hlen");
         rb[4] = new JRadioButton("1Byte = 1RNDBit", true);
         rb[4].setToolTipText("In 1 Dateibyte befindet sich genau 1 Zufallsbit");
         rb[5] = new JRadioButton("1Byte = 8RNDBit", false);
         rb[5].setToolTipText("In 1 Dateibyte befinden sich genau 8 Zufallsbits, �lteres ist h�chstwertiges");
-        rb[6] = new JRadioButton("Normaler Test", true);
+        rb[6] = new JRadioButton("Teste Normal", true);
         rb[6].setToolTipText("TNRG unterzieht sich normalem Test, keinem Wiederholungstest");
-        rb[7] = new JRadioButton("Wiederholung", false);
+        rb[7] = new JRadioButton("Repeticao", false);
         rb[7].setToolTipText("TNRG wird Wiederholungstest unterzogen, da 1. Test gescheitert");
         rb[8] = new JRadioButton("P1: T0", false);
         rb[8].setToolTipText("TNRG-Klasse P1, Test T0 w�hlen");
@@ -151,7 +151,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         gbl6.setConstraints(vorgangabbruch, gbc);
         vorgangspanel6.add(vorgangabbruch);
         textpanel7 = new JScrollPane(textbox);
-        textbox.append(progname + "\nProgrammstart am " + systemdatum() + " um " + systemzeit() + " Uhr\n\nBEI PROBLEMEN IN DREI STUFEN VORGEHEN:\n     1) Maustaste �ber das fragliche Objekt halten, Hilfe erscheint\n     2) Wenn Problem nicht gekl�rt, Hilfe-Button dr�cken\n     3) Notfalls: Technische Anfragen an zertifizierung@bsi.bund.de");
+        textbox.append(progname + "\nPrograma iniciado em " + systemdatum() + " as " + systemzeit() + "\n\nABORDAGEM EM TRES ETAPAS PARA PROBLEMAS:\n     1) Segure o botao do mouse sobre o objeto em questao, a ajuda aparecera\n     2) Se o problema nao for resolvido, pressione o botao de ajuda\n     3) Se necessario: Envie consultas tecnicas para zertigung@bsi.bund.de");
         ButtonGroup rbgrpsicherheit = new ButtonGroup();
         ButtonGroup rbgrpausgabe = new ButtonGroup();
         ButtonGroup rbgrpformat = new ButtonGroup();
@@ -214,7 +214,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
                 }
             }
             if (src == start5){
-                kommentar("\n\nTEST GESTARTET.",true,0);
+                kommentar("\n\nINICIO DO TESTE",true,0);
                 tester = new Tester(this);
                 tester.start();
             }
@@ -525,7 +525,7 @@ class Tester extends Thread{
             if (!byteformat){
                 int[] tempfeld = new int[teilenaufrunden(bitzahl,8) + 1];
                 bitdatei = new DataInputStream(datei);
-                evaluator.kommentar("Kopiere BitStream-Datei in RAM ...",false,2);
+                evaluator.kommentar("Copiando ByteStream para RAM...",false,2);
                 while ((!eof) && (anzahl < (teilenaufrunden(bitzahl,8)))){
                     try {
                         tempfeld[anzahl] = bitdatei.readUnsignedByte();
@@ -540,7 +540,7 @@ class Tester extends Thread{
                 for (int i = 0; i < BitFeldA.length; i++){
                     BitFeldA[i] = 0;
                 }
-                evaluator.kommentar("Konvertiere Dateidaten in ByteStream ...",false,2);
+                evaluator.kommentar("Converter dados de arquivo em ByteStream ...",false,2);
                 for (int i = 0; i < (teilenaufrunden(anzahl,8)); i++){
                     if (tempfeld[i] > 127){
                         BitFeldA[(i*8)+0] = 1;
@@ -592,7 +592,7 @@ class Tester extends Thread{
         try {
             int filepos = 0;
             evaluator.setzefortschritt(21);
-            evaluator.kommentar("Schreibe Restdatei: " + dateiname + "_rest",true,2);
+            evaluator.kommentar("Gravando arquivo residual: " + dateiname + "_rest",true,2);
             FileInputStream datei = new FileInputStream(dateiname);
             FileOutputStream datei2 = new FileOutputStream(dateiname + "_rest");
             if (byteformat){
@@ -633,7 +633,7 @@ class Tester extends Thread{
             evaluator.kommentar("Dateifehler: Datei zu klein. Mindestgr��e " + bitzahl + " Bits. Gr��e: " + anzahl + " Bits.", true,2);
             return false;
         }
-        evaluator.kommentar(anzahl + " Elemente in RAM kopiert.",false,2);
+        evaluator.kommentar(anzahl + " Itens copiados para RAM.",false,2);
         if (byteformat){
             evaluator.kommentar("�berpr�fe Daten ...",false,2);
             for (int i = 0; i<bitzahl; i++){
@@ -683,7 +683,7 @@ class Tester extends Thread{
     public void run(){
         if (test()) {
             if (evaluator.testart == 0 | evaluator.testart == 1){
-                evaluator.kommentar("Durchlauf erfolgreich beendet, Restdatei zum Test ausgew�hlt.",true,0);
+                evaluator.kommentar("Execucao concluida com sucesso, arquivo residual selecionado para proximo teste.",true,0);
             }
             else {
                 evaluator.kommentar("Durchlauf erfolgreich beendet.",true,0);
@@ -714,42 +714,42 @@ class Tester extends Thread{
             return false;
         }
         if (testart == 0){
-            evaluator.kommentar("TEST-SUITE:\tP1/T0",true,0);
+            evaluator.kommentar("CONJUNTO DE TESTE:\tP1/T0",true,0);
         }
         if (testart == 1){
-            evaluator.kommentar("TEST-SUITE:\tP1/T1-T5",true,0);
+            evaluator.kommentar("CONJUNTO DE TESTE:\tP1/T1-T5",true,0);
         }
         if (testart == 2){
-            evaluator.kommentar("TEST-SUITE:\tP2 (spezifische Tests)",true,0);
+            evaluator.kommentar("CONJUNTO DE TESTE:\tP2 (spezifische Tests)",true,0);
         }
-        evaluator.kommentar("DATEINAME:\t" + evaluator.dateieingabe.getText(),true,0);
+        evaluator.kommentar("NOME DO ARQUIVO:\t" + evaluator.dateieingabe.getText(),true,0);
         if (geschwaetzig){
-            evaluator.kommentar("AUSGABEDETAILS:\tEingeschaltet.",true,0);
+            evaluator.kommentar("SAIDA DETALHADA:\tLigada.",true,0);
         }else{
-            evaluator.kommentar("AUSGABEDETAILS:\tAusgeschaltet.",true,0);
+            evaluator.kommentar("SAIDA DETALHADA:\tDesligada.",true,0);
         }
         if (byteformat){
-            evaluator.kommentar("DATENFORMAT:\t1 Dateibyte enth�lt 1 Random-Bit.",true,0);
+            evaluator.kommentar("FORMATO DE DADOS:\t1 byte de arquivo possui 1 Random-Bit.",true,0);
         }else{
-            evaluator.kommentar("DATENFORMAT:\t1 Dateibyte enth�lt 8 Random-Bits.",true,0);
+            evaluator.kommentar("FORMATO DE DADOS:\t1 byte de arquivo possui 8 Random-Bits.",true,0);
         }
         if (normalertest){
-            evaluator.kommentar("TESTART:\tNormaler Test.",true,0);
+            evaluator.kommentar("TIPO DE TESTE:\tTeste Normal.",true,0);
         }else{
-            evaluator.kommentar("TESTART:\tWiederholungstest.",true,0);
+            evaluator.kommentar("TIPO DE TESTE:\tRepeticao.",true,0);
         }
-        evaluator.kommentar("RND-BITBREITE:\t" + bitbreite + " bit.",true,0);
+        evaluator.kommentar("RND BITWIDTH:\t" + bitbreite + " bit.",true,0);
         String[] testnamen = new String[12];
-        testnamen[0] = "Starte Test T0 (Disjunktheitstest); Kriterium P1.i(i)";
+        testnamen[0] = "Iniciar teste T0 (teste de disjuncao); Criterio P1.i(i)";
         testnamen[1] = "Starte Test T1 (Monobittest);  Kriterium P1.i(ii)";
         testnamen[2] = "Starte Test T2 (Pokertest);  Kriterium P1.i(ii)";
         testnamen[3] = "Starte Test T3 (Runtest);  Kriterium P1.i(ii)";
         testnamen[4] = "Starte Test T4 (Long Runtest);  Kriterium P1.i(ii)";
         testnamen[5] = "Starte Test T5 (Autokorrelationstest);  Kriterium P1.i(ii)";
-        evaluator.kommentar("Datei wird eingelesen.",true,1);
+        evaluator.kommentar("O arquivo esta sendo lido.",true,1);
         evaluator.elementeAnpassen(1);
         if (einlesen(BitFeldA)) {
-            evaluator.kommentar("Datei wurde eingelesen.",false,1);
+            evaluator.kommentar("O arquivo foi lido.",false,1);
             evaluator.setzefortschritt(42);
         }
         else {
@@ -762,7 +762,7 @@ class Tester extends Thread{
         if (testart == 0){
             evaluator.kommentar(testnamen[0],true,1);
             if (test0(c,bitbreite)) {
-                evaluator.kommentar("Test T0 bestanden.",false,1);
+                evaluator.kommentar("Teste T0 aprovado.",false,1);
                 evaluator.setzefortschritt(300);
                 evaluator.dateieingabe.setText(evaluator.dateieingabe.getText() + "_rest");
             }
