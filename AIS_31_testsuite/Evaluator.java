@@ -46,7 +46,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
     private JLabel configtestart = new JLabel("Teste:");
     private JLabel zahlenbreite = new JLabel("Numeros aleatorios internos:");
     public JTextField dateieingabe = new JTextField("Neste campo de nomes de arquivos em estilo \"/Users/lod/testData\"",40);
-    public JTextField bitbreiteeingabe = new JTextField("Largura em bit",7);
+    public JTextField bitbreiteeingabe = new JTextField("256",7);
     private JProgressBar fortschritt = new JProgressBar(0,300);
     private JButton dateisuchen = new JButton("arquivo de pesquisa");
     private JButton hilfe = new JButton("Mostrar ajuda");
@@ -95,7 +95,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         rb[8].setToolTipText("TNRG-Klasse P1, Teste T0 selecionar");
         fortschritt.setStringPainted(true);
         vorgangabbruch.setBackground(Color.red);
-        vorgangabbruch.setToolTipText("W�hrend der zeitaufw�ndigen Testsuite (P0/T1-T5) kann hiermit der Teste abgebrochen werden");
+        vorgangabbruch.setToolTipText("Durante conjuntos de testes demorados (P0/T1-T5), o teste pode ser abortado com este botao.");
         start5.setToolTipText("Apos inserir os dados, clique aqui para iniciar o teste");
         dateisuchen.addActionListener(this);
         dateisuchen.setEnabled(false);
@@ -104,7 +104,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         start5.addActionListener(this);
         vorgangabbruch.addActionListener(this);
         hilfe.addActionListener(this);
-        hilfe.setToolTipText("Hilfetext/Anleitung im Logfenster abbilden");
+        hilfe.setToolTipText("Mostrar texto/instrucoes de ajuda na janela de registro");
         hilfe.setBackground(Color.yellow);
         for (int i = 0; i < rb.length; i++){
             rb[i].addItemListener(this);
@@ -131,7 +131,7 @@ public class Evaluator extends JFrame implements ActionListener,ItemListener{
         configpanel3.add(rb[2]);
         configpanel3.add(rb[4]);
         configpanel3.add(rb[6]);
-        bitbreiteeingabe.setToolTipText("Breite der Internen Zufallszahlen in Bit");
+        bitbreiteeingabe.setToolTipText("Largura dos números aleatorios internos em bits");
         configpanel3.add(bitbreiteeingabe);
         configpanel3.add(rb[1]);
         configpanel3.add(rb[3]);
@@ -624,10 +624,10 @@ class Tester extends Thread{
         }
         evaluator.kommentar(anzahl + " Itens copiados para RAM.",false,2);
         if (byteformat){
-            evaluator.kommentar("�berpr�fe Daten ...",false,2);
+            evaluator.kommentar("Verificar dados ...",false,2);
             for (int i = 0; i<bitzahl; i++){
                 if ((BitFeldA[i] != 1) & (BitFeldA[i] != 0)){
-                    evaluator.kommentar("Element Nr. " + (i) + " ungleich \"0\" oder \"1\", da \"" + BitFeldA[i] + "\" - Datenpr�fung reprovado.",true,2);
+                    evaluator.kommentar("Elemento Nr. " + (i) + " nao eh igual a \"0\" ou \"1\", mas \"" + BitFeldA[i] + "\" - Verificacao de dados reprovada.",true,2);
                     return false;
                 }
             }
@@ -833,7 +833,7 @@ class Tester extends Thread{
                 fehler = true;
             }
             if (zuwenigdaten) {
-                evaluator.kommentar("Zuwenig Testdaten - Testreihe abgebrochen (Progamm liest maximal 7200000 Zufallsbits ein).",true,1);
+                evaluator.kommentar("Poucos dados de teste - série de teste abortada (o programa lê no máximo 7200000 bits aleatórios).",true,1);
                 return false;
             }
             evaluator.setzefortschritt(100);
@@ -846,7 +846,7 @@ class Tester extends Thread{
                 fehler = true;
             }
             if (zuwenigdaten) {
-                evaluator.kommentar("Zuwenig Testdaten - Testreihe abgebrochen (Progamm liest maximal 7200000 Zufallsbits ein).",true,1);
+                evaluator.kommentar("Poucos dados de teste - série de teste abortada (o programa lê no máximo 7200000 bits aleatórios).",true,1);
                 return false;
             }
             evaluator.setzefortschritt(150);
@@ -859,7 +859,7 @@ class Tester extends Thread{
                 fehler = true;
             }
             if (zuwenigdaten) {
-                evaluator.kommentar("Zuwenig Testdaten - Testreihe abgebrochen (Progamm liest maximal 7200000 Zufallsbits ein).",true,1);
+                evaluator.kommentar("Poucos dados de teste - série de teste abortada (o programa lê no máximo 7200000 bits aleatórios).",true,1);
                 return false;
             }
             evaluator.setzefortschritt(200);
@@ -872,7 +872,7 @@ class Tester extends Thread{
                 fehler = true;
             }
             if (zuwenigdaten) {
-                evaluator.kommentar("Zuwenig Testdaten - Testreihe abgebrochen (Progamm liest maximal 7200000 Zufallsbits ein).",true,1);
+                evaluator.kommentar("Poucos dados de teste - série de teste abortada (o programa lê no máximo 7200000 bits aleatórios).",true,1);
                 return false;
             }
             evaluator.setzefortschritt(250);
@@ -1008,7 +1008,7 @@ class Tester extends Thread{
                 run++;
                 if (run>=34) {
                     ok=false;
-                    evaluator.kommentar("Long Run aufgetreten (Wert: " + BitFeldB[i] + "). Erste Bitposition: " + (i-33) + ".",true,2);
+                    evaluator.kommentar("Long Run ocorreu (valor: " + BitFeldB[i] + "). Posicao do bit: " + (i-33) + ".",true,2);
                 }
             }
             else run=1;
@@ -1183,7 +1183,7 @@ class Tester extends Thread{
         }
         letzterwert += 4*i;
         if (voll[0]+voll[1]+voll[2]+voll[3]+voll[4]+voll[5]+voll[6]+voll[7]<8){
-            evaluator.kommentar("Inputdatei zu klein.... Criterio P2.i)(vii.d) konnte nicht geprueft werden",true,2);
+            evaluator.kommentar("Arquivo de entrada muito pequeno... Criterio P2.i)(vii.d) nao pode ser verificado",true,2);
             zuwenigdaten = true;
             ok = false;
         }
